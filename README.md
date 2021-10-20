@@ -1,9 +1,9 @@
 # Go-practice-playground
 
-provide a repository to record the practice progress of Golang and write down some annotation for the common usage of code syntax.
+provide a repository to record the practice progress of Golang. Furthermore, annotate some notes for the usages of common syntax statements and featured syntax of Golang.
 
 ## Folder structure
-reinitialize
+
 ``` text
 ├─── scripts
 │ ├─── complile_protoc.sh      # shell script for `protoc ...`
