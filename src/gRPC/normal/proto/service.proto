@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package servicepb;
+
+// 指定對應的程式語言的 package name 為何，執行protoc --go_out=. 就會輸出至該目錄
+option go_package = "go-practice-playground/gRPC/normal/proto";
+
+// 匯入其他 protobuf 以使用其定義的 type, message, service
+import "google/protobuf/timestamp.proto";
+
+message Response {
+  // 須賦予變數integer值，代表該欄位的流水號。
+  // 定義後就不能再異動其型別，否則會有相容性問題
+  // 若傳來的資料缺乏特定field，會自動補zero value
+  string Name = 1;
+  google.protobuf.Timestamp Commited = 2;
+}
+
+message Request {
+    string Name = 1;
+}

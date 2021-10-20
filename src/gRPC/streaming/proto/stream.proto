@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package streamingpb;
+
+option go_package = "go-practice-playground/src/gRPC/streaming/proto";
+
+message StreamPoint {
+    string name = 1;
+    int32 value = 2;
+}
+
+message StreamRequest {
+    StreamPoint pt = 1;
+}
+
+message StreamResponse {
+    StreamPoint pt = 1;
+}
+
+service StreamService {
+    // Simple RPC
+    rpc GetFeature(StreamRequest) returns (StreamResponse) {};
+
+    // Server-side streaming RPC
+    rpc ListFeatures(StreamRequest) returns (stream StreamResponse) {};
+
+    // Client-side streaming RPC
+    rpc RecordRoute(stream StreamRequest) returns (StreamResponse) {};
+
+    // Bidirectional streaming RPC
+    rpc RouteChat(stream StreamRequest) returns (stream StreamResponse) {};
+}

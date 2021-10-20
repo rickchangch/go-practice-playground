@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package servicepb;
+
+// 指定對應的程式語言的 package name 為何，執行protoc --go_out=. 就會輸出至該目錄
+option go_package = "go-practice-playground/gRPC/normal/proto";
+
+// 匯入其他 protobuf 以使用其定義的 type, message, service
+import "service.proto";
+
+service DemoService {
+    rpc Action(Request) returns (Response) {}
+}
