@@ -1,6 +1,6 @@
 package main
 
-import "go-practice-playground/reflectUsage/structConvert"
+import "go-practice-playground/reflect/structConvert"
 
 func main() {
 	//
