@@ -17,4 +17,4 @@ done
 # run
 go run ${SRC_DIR}/${TARGET_DIR}/main.go 
 
-echo "done."
+echo "=== script done ==="
