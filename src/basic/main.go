@@ -1,6 +1,7 @@
 package main
 
 import (
+	"go-practice-playground/basic/container"
 	contextDemo "go-practice-playground/basic/context-demo"
 	"go-practice-playground/basic/encrypt"
 	gotour "go-practice-playground/basic/go-tour"
@@ -19,4 +20,7 @@ func main() {
 
 	// test encrypt usage
 	encrypt.Handler.Run()
+
+	// test container type (List, Heap, Ring)
+	container.RunHeap()
 }
