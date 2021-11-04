@@ -1,0 +1,29 @@
+version: "3.3"
+
+volumes:
+  database_data:
+
+services:
+  mysqldb:
+    image: mysql:5.7
+    container_name: mysql
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - 3306:3306
+    volumes:
+      - database_data:/var/lib/mysql
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpass
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: mytest
+  phpmyadmin:
+    image: phpmyadmin:apache
+    container_name: phpMyAdmin
+    ports:
+      - 8306:80
+    depends_on:
+      - mysqldb
+    environment:
+      PMA_HOST: mysqldb
+      MYSQL_ROOT_PASSWORD: rootpass
