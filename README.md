@@ -11,6 +11,7 @@ provide a repository to record the practice progress of Golang. Furthermore, ann
 ├─── src
 │ ├─── basic                   # Basic usage of common syntax statements and golang feature syntax syntax
 │ ├─── gRPC                    # Common gRPC and straming gRPC usage
+│ ├─── localTest               # Implement unit test with Suite package, and then use docker to build temporary DB for testing.
 │ ├─── reflect                 # Commonsensical usage of reflect and relative 3rd-party lib
 │ └─── web-application         # Demo of the golang web application
 ├─── Makefile                  # Quick script sample
